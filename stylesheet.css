@@ -1,0 +1,18 @@
+/* The islands themselves are styled inline from settings (see lib/islands.js).
+   The panel can't be: the overview rewrites its inline style on show and hide. */
+#panel.islandbar,
+#panel.islandbar:overview {
+    background-color: transparent;
+}
+
+.islandbar-dynamic {
+    max-width: 320px;
+}
+
+.islandbar-dynamic-box {
+    spacing: 6px;
+}
+
+.islandbar-dynamic-icon {
+    icon-size: 14px;
+}

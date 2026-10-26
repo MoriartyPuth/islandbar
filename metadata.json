@@ -1,0 +1,9 @@
+{
+  "uuid": "islandbar@MoriartyPuth.github.io",
+  "name": "Islandbar",
+  "description": "Turns the top bar into floating frosted-glass islands that merge into a full bar when a window is maximized. The center island stretches to show the playing song and incoming notifications.",
+  "shell-version": ["50"],
+  "settings-schema": "org.gnome.shell.extensions.islandbar",
+  "url": "https://github.com/MoriartyPuth/islandbar",
+  "version-name": "2.0.0"
+}

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.islandbar" path="/org/gnome/shell/extensions/islandbar/">
+    <key name="island-color" type="s">
+      <default>'#282828'</default>
+      <summary>Island fill color</summary>
+    </key>
+    <key name="island-opacity" type="d">
+      <range min="0" max="1"/>
+      <default>0.6</default>
+      <summary>Island fill opacity</summary>
+    </key>
+    <key name="corner-radius" type="i">
+      <range min="0" max="30"/>
+      <default>14</default>
+      <summary>Island corner radius in pixels</summary>
+    </key>
+    <key name="gap" type="i">
+      <range min="0" max="24"/>
+      <default>6</default>
+      <summary>Gap between the islands and the screen edge in pixels</summary>
+    </key>
+    <key name="border-width" type="i">
+      <range min="0" max="4"/>
+      <default>1</default>
+      <summary>Island border width in pixels</summary>
+    </key>
+    <key name="border-color" type="s">
+      <default>'#ebdbb2'</default>
+      <summary>Island border color</summary>
+    </key>
+    <key name="border-opacity" type="d">
+      <range min="0" max="1"/>
+      <default>0.12</default>
+      <summary>Island border opacity</summary>
+    </key>
+    <key name="blur" type="b">
+      <default>true</default>
+      <summary>Frosted glass: blur the wallpaper behind each island</summary>
+    </key>
+    <key name="blur-radius" type="i">
+      <range min="1" max="40"/>
+      <default>24</default>
+      <summary>Glass blur radius</summary>
+    </key>
+    <key name="blur-brightness" type="d">
+      <range min="0.2" max="1"/>
+      <default>0.85</default>
+      <summary>Glass brightness</summary>
+    </key>
+    <key name="shadow" type="b">
+      <default>true</default>
+      <summary>Drop a soft shadow under each island</summary>
+    </key>
+    <key name="hover-glow" type="b">
+      <default>true</default>
+      <summary>Light up the island border while hovered or while one of its menus is open</summary>
+    </key>
+    <key name="accent-color" type="s">
+      <default>'#fe8019'</default>
+      <summary>Glow accent color</summary>
+    </key>
+    <key name="merge-on-maximize" type="b">
+      <default>true</default>
+      <summary>Merge the islands into one full-width bar while a window is maximized</summary>
+    </key>
+    <key name="wallpaper-colors" type="b">
+      <default>false</default>
+      <summary>Take colors from the wallpaper palette written by rice-theme (~/.cache/rice/islandbar.json)</summary>
+    </key>
+    <key name="dynamic-island" type="b">
+      <default>true</default>
+      <summary>Stretch the center island to show the playing song</summary>
+    </key>
+    <key name="dynamic-island-notifications" type="b">
+      <default>true</default>
+      <summary>Briefly show incoming notification titles in the center island</summary>
+    </key>
+  </schema>
+</schemalist>
