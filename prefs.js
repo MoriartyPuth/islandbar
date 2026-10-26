@@ -81,7 +81,9 @@ export default class IslandbarPreferences extends ExtensionPreferences {
         const glow = toggle(effects, 'hover-glow', 'Glow on hover', 'Also while one of the island’s menus is open');
         const accent = color(effects, 'accent-color', 'Glow color');
         glow.bind_property('active', accent, 'sensitive', 2);
-        toggle(effects, 'merge-on-maximize', 'Merge into a full bar when a window is maximized');
+        const merge = toggle(effects, 'merge-on-maximize', 'Merge into a full bar when a window is maximized');
+        const mergedOpacity = number(effects, 'merged-opacity', 'Merged bar opacity', 0, 1, 0.05, 2);
+        merge.bind_property('active', mergedOpacity, 'sensitive', 2);
 
         const colors = group('Wallpaper colors',
             'Uses the palette rice-theme writes to ~/.cache/rice/islandbar.json. Overrides the colors above while on.');

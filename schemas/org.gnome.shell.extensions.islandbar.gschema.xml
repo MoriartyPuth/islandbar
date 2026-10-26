@@ -64,6 +64,11 @@
       <default>true</default>
       <summary>Merge the islands into one full-width bar while a window is maximized</summary>
     </key>
+    <key name="merged-opacity" type="d">
+      <range min="0" max="1"/>
+      <default>0.9</default>
+      <summary>Fill opacity of the merged bar, kept separate so see-through islands still merge into a solid bar</summary>
+    </key>
     <key name="wallpaper-colors" type="b">
       <default>false</default>
       <summary>Take colors from the wallpaper palette written by rice-theme (~/.cache/rice/islandbar.json)</summary>
