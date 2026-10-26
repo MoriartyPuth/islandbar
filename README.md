@@ -5,7 +5,8 @@
 Turns the GNOME top bar into floating rounded islands: one each for the left,
 center and right sections, with the wallpaper showing through the gaps. The
 islands are frosted glass over the wallpaper, live wallpapers included, and
-they merge into one full-width bar while a window is maximized.
+they merge into one full-width bar, or get out of the way entirely, while a
+window is maximized.
 
 ## Features
 
@@ -13,8 +14,10 @@ they merge into one full-width bar while a window is maximized.
   below them instead of sliding underneath.
 - Frosted glass: each island blurs the wallpaper behind it, including video
   wallpapers such as [Hanabi](https://github.com/jeffshee/gnome-ext-hanabi).
-- Merges into a full bar while a window is maximized and splits again when it
-  isn't. Only colors change, so windows never resize when it happens.
+- While a window is maximized, either merge into one solid full-width bar
+  (only colors change, so windows never resize) or hide the bar completely so
+  the window gets the full screen height. Touch the top edge of the screen, or
+  open the overview, to peek at the hidden bar.
 - Accent glow on an island while it's hovered or one of its menus is open.
 - Soft drop shadow under each island.
 - Dynamic island: the clock island stretches to show the playing song (click

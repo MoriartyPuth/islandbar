@@ -60,14 +60,19 @@
       <default>'#fe8019'</default>
       <summary>Glow accent color</summary>
     </key>
-    <key name="merge-on-maximize" type="b">
-      <default>true</default>
-      <summary>Merge the islands into one full-width bar while a window is maximized</summary>
+    <key name="maximize-mode" type="s">
+      <choices>
+        <choice value="merge"/>
+        <choice value="hide"/>
+        <choice value="none"/>
+      </choices>
+      <default>'merge'</default>
+      <summary>While a window is maximized: merge the islands into a full bar, hide the bar (peek at the top edge), or leave the islands alone</summary>
     </key>
     <key name="merged-opacity" type="d">
       <range min="0" max="1"/>
       <default>0.9</default>
-      <summary>Fill opacity of the merged bar, kept separate so see-through islands still merge into a solid bar</summary>
+      <summary>Fill opacity of the merged bar, and of the islands while they peek over a maximized window, kept separate so see-through islands stay readable</summary>
     </key>
     <key name="wallpaper-colors" type="b">
       <default>false</default>

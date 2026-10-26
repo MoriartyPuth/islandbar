@@ -81,9 +81,32 @@ export default class IslandbarPreferences extends ExtensionPreferences {
         const glow = toggle(effects, 'hover-glow', 'Glow on hover', 'Also while one of the island’s menus is open');
         const accent = color(effects, 'accent-color', 'Glow color');
         glow.bind_property('active', accent, 'sensitive', 2);
-        const merge = toggle(effects, 'merge-on-maximize', 'Merge into a full bar when a window is maximized');
-        const mergedOpacity = number(effects, 'merged-opacity', 'Merged bar opacity', 0, 1, 0.05, 2);
-        merge.bind_property('active', mergedOpacity, 'sensitive', 2);
+
+        const modes = [
+            ['merge', 'Merge into a full bar'],
+            ['hide', 'Hide the bar (touch the top edge to peek)'],
+            ['none', 'Keep the islands'],
+        ];
+        const mode = new Adw.ComboRow({
+            title: 'When a window is maximized',
+            model: Gtk.StringList.new(modes.map(([, label]) => label)),
+        });
+        const syncMode = () => {
+            const index = modes.findIndex(([value]) => value === settings.get_string('maximize-mode'));
+            if (index >= 0 && mode.selected !== index)
+                mode.selected = index;
+        };
+        syncMode();
+        mode.connect('notify::selected', () => settings.set_string('maximize-mode', modes[mode.selected][0]));
+        settings.connect('changed::maximize-mode', syncMode);
+        effects.add(mode);
+
+        const mergedOpacity = number(effects, 'merged-opacity', 'Solid bar opacity',
+            0, 1, 0.05, 2);
+        mergedOpacity.subtitle = 'The merged bar, or the islands peeking over a maximized window';
+        const syncSensitive = () => (mergedOpacity.sensitive = settings.get_string('maximize-mode') !== 'none');
+        syncSensitive();
+        settings.connect('changed::maximize-mode', syncSensitive);
 
         const colors = group('Wallpaper colors',
             'Uses the palette rice-theme writes to ~/.cache/rice/islandbar.json. Overrides the colors above while on.');
